@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Allow frontend access
+# Allow all origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -24,4 +24,3 @@ async def get_answer(req: QueryRequest):
 @app.get("/")
 async def root():
     return {"message": "✅ FastAPI backend is running successfully!"}
-
